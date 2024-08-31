@@ -1,3 +1,4 @@
+from datetime import datetime
 saldo = 0
 limite = 500.00
 extrato = ""
@@ -22,7 +23,8 @@ Por favor, digite um comando para realizar uma operação:
         valor = float(input("Digite o valor do depósito: "))
         if valor >= 0:
             saldo += valor
-            extrato += f"Depósito no valor de: {valor:.2f}\n"
+            date_dep = datetime.today()
+            extrato += f"Depósito no valor de: {valor:.2f} às {date_dep}\n"
             print(f"Depósito no valor de R$ {valor:.2F} realizado com sucesso.")
         else:
             print("Operação falhou. Você não pode depositar um valor negativo.")
@@ -37,7 +39,8 @@ Por favor, digite um comando para realizar uma operação:
         elif valor > 0:
             saldo -= valor
             numero_saques += 1
-            extrato += f"Saque no valor de: {valor:.2f}\n"
+            date_saq = datetime.today()
+            extrato += f"Saque no valor de: {valor:.2f} às {datesaq}\n"
             print(f"Saque no valor de R$ {valor:.2F} realizado com sucesso.")
         else:
             print("Operação falhou, quantidade inválida.")
