@@ -40,7 +40,7 @@ Por favor, digite um comando para realizar uma operação:
             saldo -= valor
             numero_saques += 1
             date_saq = datetime.today()
-            extrato += f"Saque no valor de: {valor:.2f} às {datesaq}\n"
+            extrato += f"Saque no valor de: {valor:.2f} às {date_saq}\n"
             print(f"Saque no valor de R$ {valor:.2F} realizado com sucesso.")
         else:
             print("Operação falhou, quantidade inválida.")
